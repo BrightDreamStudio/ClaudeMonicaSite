@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // Redirection automatique en fonction de la langue du navigateur
+        window.onload = function () {
+            // Récupère la langue du navigateur (par exemple "fr" pour le français)
+            var userLang = navigator.language || navigator.userLanguage;
+            userLang = userLang.substring(0, 2); // Extrait les 2 premiers caractères (ex. "fr" ou "en")
+
+            // Redirige vers la version appropriée
+            if (userLang === 'fr') {
+                window.location.href = "fr/accueil_fr.html";
+            } else if (userLang === 'de') {
+                window.location.href = "de/accueil_de.html";
+            } else if (userLang === 'es') {
+                window.location.href = "de/accueil_es.html";
+            } else {
+                window.location.href = "en/accueil_en.html"; // Par défaut, rediriger vers la version anglaise
+            }
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

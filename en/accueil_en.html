@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="../Images/favicon.ico"/>
+    <title>Author Monica Hards | Dying to Live: The Two Deaths and the One Worth Dying For</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <a href="index.html">
+            <img class="Logo" src="../../Images/Logo.png" alt="Logo">
+        </a>
+        <div class="language-select-container">
+            <select id="language-select" class="language-select" onchange="changeLanguage()">
+                <option value="fr">Français</option>
+                <option value="en" selected>English</option>
+                <option value="de">Deutsch</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+        <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+        <button class="burger-button" id="openMenuBtn">&#9776;</button>
+    </div>
+
+    <div id="sideMenu" class="side-menu">
+        <button class="close-menu" id="closeMenuBtn">&times;</button>
+        <nav class="menu-links">
+            <a href="#accueil">Home</a>
+            <a href="#livre">The Book</a>
+            <a href="#auteur">The Author</a>
+            <a href="#contact">Contact</a>
+            <a href="../Php/Gallery.php">Gallery</a>
+        </nav>
+    </div>
+
+    <div class="hangs" id="accueil">
+        <div>
+            <h1>Dying to Live</h1>
+            <span>The Two Deaths and the One Worth Dying For</span>
+        </div>
+    </div>
+
+    <div class="bento">
+        <div class="box box1" id="livre">
+            <img src="../Images/Livre.png" alt="Book cover">
+            <div class="informations">
+                <h1>The Book</h1>
+                <div class="resume">
+                    <p>
+                        Sometimes, a part of us needs to die so we can move on — renewed, lighter, and truly alive.
+                        Letting go of what no longer serves us clears the path for a new beginning.
+                        When we're ready to release our emotional baggage, it’s like going through a rebirth.
+                    </p>
+                </div>
+                <div class="buy">
+                    <a href="https://www.amazon.com/Dying-Live-Two-Deaths-Worth-ebook/dp/B08PYGRCTP" class="btn">Kindle - $5</a>
+                    <a href="https://www.amazon.com/Dying-Live-Two-Deaths-Worth/dp/1982282509" class="btn">Paperback - $6</a>
+                    <a href="https://www.amazon.com/Dying-Live-Two-Deaths-Worth/dp/1982282525" class="btn full-width">Hardcover - $27</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box box2">
+            <p>Written by Monica Hards</p>
+            <img src="../Images/Monica.jpeg" alt="Monica Hards">
+        </div>
+    </div>
+
+    <div class="bento">
+        <div class="box box4" id="auteur">
+            <h1>About the Book</h1>
+            <img src="../Images/ligne.png" alt="Line">
+            <p>
+                What happens after death? Where does our soul go? These questions lie at the heart of an unforgettable journey.
+                Through deeply personal experiences, Monica Hards explores near-death, sensitivity, and spiritual awakening.
+                This book invites you to go beyond what the mind can grasp — to believe in the unseen, trust your intuition,
+                and break free from patterns of pain and fear. With compassion and clarity, she opens a door to transformation,
+                connection, and living with presence. <br><br>
+                <em>Dying to Live</em> is an invitation to discover your soul’s deepest truth.
+            </p>
+        </div>
+
+        <div class="box box4">
+            <h1>Virtual Interview with Monica Hards</h1>
+            <img src="../Images/ligne.png" alt="Line">
+            <iframe style="margin-top: 24px;"
+                    width="800"
+                    height="450"
+                    src="https://www.youtube.com/embed/sUTcMJPCaAc"
+                    title="Featured Author | Virtual Interview | Monica Hards"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <h1 style="margin: 0 auto;text-align: center;background-color: #CCD5AE;">Author's Gallery</h1>
+
+    <div class="gallery" data-gallery-type="accueil">
+    </div>
+
+    <div id="lightbox">
+        <button id="close">×</button>
+        <button id="prev"><</button>
+        <img id="lightbox-img" src="" />
+        <button id="next">></button>
+        <div id="caption"></div>
+    </div>
+
+    <div class="bento">
+        <div class="box box2">
+            <h1 style="margin-bottom: 8px;">Reader Reactions</h1>
+            <img src="../Images/ligne.png" alt="Line" style="height: 5px;">
+            <p>Hear what people are saying about Monica Hards' book</p>
+            <a href="https://www.forewordreviews.com/reviews/dying-to-live-9781982282509/">
+                <img src="../Images/foreword.png" alt="Foreword Review">
+            </a>
+            <a href="https://www.kirkusreviews.com/book-reviews/monica-hards/dying-to-live2/">
+                <img src="../Images/Kirkus.png" alt="Kirkus Review">
+            </a>
+        </div>
+
+        <div class="box box1" style="flex-direction: column;">
+            <h1>Where to Buy</h1>
+            <div class="buy-buttons-grid">
+                <a class="btn-buy" href="https://www.amazon.com/Dying-Live-Two-Deaths-Worth/dp/1982282509/">Buy on Amazon</a>
+                <a class="btn-buy" href="https://www.fnac.com/livre-numerique/a15551005/Monica-Hards-Dying-to-Live">Buy on Fnac</a>
+                <a class="btn-buy" href="https://www.barnesandnoble.com/w/dying-to-live-monica-hards/1138272927?ean=9781982282509">Buy on Barnes & Noble</a>
+                <a class="btn-buy" href="https://www.booksamillion.com/p/Dying-Live/Monica-Hards/9781982282509?id=7930448723984">Buy on Books-A-Million</a>
+                <a class="btn-buy" href="https://www.balboapress.com/en-gb/bookstore/bookdetails/796814-dying-to-live">Buy on Balboa Press</a>
+                <a class="btn-buy" href="https://www.waterstones.com/book/dying-to-live/monica-hards/9781982282509">Buy on Waterstones</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bento">
+        <div class="box box4" style="flex-direction: column; flex: 2;" id="contact">
+            <h1>To Dive Deeper</h1>
+            <div class="circle-container">
+                <div class="circle-wrapper" data-link="https://soundcloud.com/kated-294710598/monica-hards/s-R2JAH42zNVk">
+                    <div class="circle">
+                        <img src="../Images/SoundCloud.png" alt="Audio Interview">
+                    </div>
+                    <div class="player-bar" style="flex-direction: column">
+                        <img src="../Images/PlayerBar.png" alt="Playback Bar" style="height: 5px; width: 400px;">
+                        <button class="play-button">
+                            <img style ="width:10%;" src="../Images/Play.png" />
+                        </button>
+                    </div>
+                </div>
+                <div class="circle-wrapper" data-link="https://www.youtube.com/watch?v=_Tum6q_Bzu0">
+                    <div class="circle">
+                        <img src="../Images/WebTalkRadio.png" alt="WebTalkRadio">
+                    </div>
+                    <div class="player-bar" style="flex-direction: column">
+                        <img src="../Images/PlayerBar.png" alt="Playback Bar" style="height: 5px;width: 400px;">
+                        <button class="play-button">
+                            <img style ="width:10%;" src="../Images/Play.png" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box box4" style="flex-direction: column;">
+            <h1>Contact</h1>
+            <img src="../Images/ligne.png" alt="Line" style="margin-bottom: 16px; width: 100px;">
+            <form action="../Php/contact.php" method="POST" style="display: flex; flex-direction: column; gap: 12px;">
+                <label for="email">Your email address:</label>
+                <input type="hidden" name="lang" value="en">
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required placeholder="Subject of your message">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Your message here..."></textarea>
+
+                <!-- CAPTCHA -->
+				<div class="g-recaptcha"
+					data-sitekey="6Lc-2zgrAAAAABWR_u4VIaqas0kZHYrHnHJgkkxj" 
+					data-callback="onCaptchaSuccess">
+				</div>
+				
+				    <!-- Champ Honeypot (caché par CSS) -->
+				<div style="display: none;">
+					<label for="website">For robots! :</label>
+					<input type="text" id="website" name="website">
+				</div>
+
+				<!-- Bouton Envoyer (caché au début) -->
+				<button id="submit-btn" type="submit" class="btn" style="display: none;">Send</button>
+            </form>
+
+            <a href="https://www.instagram.com/monicabook_2017/">
+                <img style="width: 10%; margin: 7%;" src="../Images/Instagram.png" />
+            </a>
+
+        </div>
+    </div>
+
+    <script src="../Javascript/darkmode.js"></script>
+    <script src="../Javascript/Gallery.js"></script>
+    <script src="../Javascript/langues.js"></script>
+    <script src="../Javascript/CircleInterview.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+
+        if (status === 'success') {
+            alert("✅ Message sent successfully!");
+        } else if (status === 'error') {
+            alert("❌ An error occurred. Please try again.");
+        }
+
+        if (status) {
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+		    function onCaptchaSuccess() {
+        // Affiche le bouton Envoyer
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.style.display = 'block';
+
+        // Masque le CAPTCHA
+        const captcha = document.querySelector('.g-recaptcha');
+        captcha.style.display = 'none';
+    }
+    </script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="../Javascript/SideMenu.js"></script>
+
+</body>
+</html>

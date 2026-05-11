@@ -1,0 +1,584 @@
+﻿html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 3.55vh 0px;
+}
+
+p {
+    margin: 2.65vh 0px;
+}
+
+a {
+    text-decoration: none; /* Enlève le soulignement */
+}
+
+    /* Optionnel : Ajouter un effet de survol (hover) pour les liens */
+    a:hover {
+        text-decoration: none; /* Enlève le soulignement au survol */
+    }
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1.1vh 1.1vw;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex; /* Utilisation du flexbox pour un alignement horizontal */
+    justify-content: flex-start; /* Aligne tout à gauche */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    gap: 1.1vw; /* Espacement entre la liste déroulante et le bouton Dark Mode */
+}
+    .header img{
+        padding-right: 72.5vw;
+    }
+
+.language-select {
+    font-size: 1em;
+    padding: 1.1vh;
+    border-radius: 0.5vh;
+    border: 1px solid #ccc; /* Bordure discrète */
+    background-color: #fff; /* Fond blanc */
+    cursor: pointer;
+}
+
+.dark-mode-toggle {
+    font-size: 1.8em; /* Taille du bouton plus grande */
+    background: none; /* Pas de fond pour garder l'icône visible */
+    border: none; /* Pas de bordure */
+    color: white; /* Texte en blanc pour bien se voir sur fond sombre */
+    cursor: pointer; /* Curseur en forme de main */
+    padding: 1.1vh; /* Espacement autour de l'icône */
+    border-radius: 50%; /* Coins arrondis pour un look circulaire */
+    transition: background-color 0.3s ease; /* Transition douce pour l'effet au survol */
+}
+
+    .dark-mode-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Effet de survol avec un léger fond */
+    }
+
+
+.hangs {
+    width: 100%;
+    height: 44.2vh; /* Taille idéale pour un visuel accrocheur */
+    background-image: url(Images/BG1.png); /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.bento {
+    background-color: #CCD5AE;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.1vw; /* Espacement entre les boîtes */
+    padding: 1.1vh;
+}
+
+.box {
+    background-color: #FAEDCD; /* Couleur de fond claire */
+    padding: 3.5vh;
+    height: 47vh;
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.box1 {
+    flex: 2; /* La première boîte est plus large */
+    display: flex;
+    gap: 1.3vw;
+}
+
+    .box1 img {
+        height: auto; /* Garde les proportions de l'image */
+        border-radius: 10px; /* Facultatif : arrondir les coins de l'image */
+    }
+
+    .box1 p {
+        max-height: 15.5vh;
+        overflow: auto;
+    }
+
+.box2 {
+    flex: 1; /* La deuxième boîte est plus petite */
+}
+
+    .box2 img {
+        width: 70%; /* L'image prend toute la largeur de la boîte */
+        max-width: 24vw; /* Limite la taille maximale de l'image */
+        height: auto; /* Garde les proportions de l'image */
+        border-radius: 10px; /* Facultatif : arrondir les coins de l'image */
+    }
+
+.box3 {
+    height: 66.3vh;
+    flex: 1; /* La première boîte est plus large */
+    display: flex;
+    flex-direction: column;
+    gap: 1.3vw;
+}
+
+    .box3 img {
+        align-content: center;
+        width: 100%; /* L'image prend toute la largeur de la boîte */
+        height: auto; /* Garde les proportions de l'image */
+        border-radius: 10px; /* Facultatif : arrondir les coins de l'image */
+    }
+
+.box4 {
+    height: 66.3vh;
+    flex: 1; /* La deuxième boîte est plus petite */
+}
+
+    .box4 img {
+        align-content: center;
+        width: 100%; /* L'image prend toute la largeur de la boîte */
+        height: auto; /* Garde les proportions de l'image */
+        border-radius: 10px; /* Facultatif : arrondir les coins de l'image */
+    }
+
+
+.informations {
+    display: flex;
+    flex-direction: column;
+}
+
+.buy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.1vh; /* Espacement entre les boutons */
+    margin-top: 1.1vw; /* Espace au-dessus des boutons */
+}
+
+/* Style des boutons */
+.btn {
+    background-color: #D4A373; /* Couleur verte */
+    color: white;
+    border: none;
+    padding: 1.1vh 1.1vw;
+    font-size: 1.2em;
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    flex: 1; /* Les boutons occuperont un espace égal */
+}
+
+    /* Pour les deux premiers boutons qui partagent la moitié de la largeur */
+    .btn:nth-child(1),
+    .btn:nth-child(2) {
+        flex: 1 1 30%; /* Chaque bouton prend environ 48% de la largeur */
+    }
+
+/* Le troisième bouton prend toute la largeur */
+.full-width {
+    flex: 1 1 100%; /* Ce bouton prend toute la largeur */
+}
+
+.btn:hover {
+    background-color: #bc8b5e;
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery img {
+    object-fit: cover; /* Couvre l'espace sans déformer l'image */
+    border-radius: 1.6vh; /* Coins arrondis de l'image */
+    margin: 1.6vh;
+    height: 75%;
+    margin-top: 3.2vh;
+}
+
+#blackhover:hover {
+    filter: grayscale(5);
+    transform: scale(1.1);
+}
+
+
+.gallery {
+    background-color: #CCD5AE;
+    display: flex;
+    gap: 1.1vw;
+    height: 39vh;
+    justify-content: center;
+    text-align: center;
+}
+
+    .gallery img {
+        aspect-ratio: 1/1;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        object-fit: cover;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+        .gallery img:hover {
+            filter: grayscale(100%);
+            transform: scale(1.05);
+        }
+
+    .gallery::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .gallery::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .gallery::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+/* Lightbox style */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+#caption {
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1001;
+    user-select: none;
+}
+
+#prev {
+    left: 30px;
+}
+
+#next {
+    right: 30px;
+}
+
+    #prev:hover,
+    #next:hover,
+    #close:hover {
+        color: #ccc;
+    }
+
+.btn-buy {
+    margin: 8px;
+    padding: 1.1vh 1.1vw;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+
+    .btn-buy:hover {
+        background-color: #e0e0e0;
+    }
+
+
+.buy-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+    height: 24vh;
+}
+
+    .buy-buttons-grid .btn-buy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0; /* padding interne inutile avec full size */
+        font-size: 1.1em;
+        font-weight: bold;
+        background-color: #D4A373;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+        .buy-buttons-grid .btn-buy:hover {
+            background-color: #bc8b5e;
+            transform: scale(1.03);
+        }
+
+.circle-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.circle-wrapper {
+    position: relative;
+    width: 8.4vw;
+    height: 8.4vw;
+    transition: transform 0.6s ease;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+    .circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 0.3s ease;
+    }
+
+    .circle:hover img {
+        filter: brightness(70%);
+    }
+
+.player-bar {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 180px;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    border-radius: 20px;
+    align-items: center;
+    gap: 20px;
+}
+
+.play-button {
+    font-size: 1.5em;
+    background: #FAEDCD;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+    .play-button:hover {
+        transform: scale(1.03);
+    }
+
+.circle-wrapper.active {
+    transform: translateX(-300px);
+}
+
+    .circle-wrapper.active .player-bar {
+        display: flex;
+    }
+
+input[name="website"] {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+.burger-button {
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -400px; /* caché à droite */
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 1050;
+    padding: 20px;
+}
+
+    .side-menu.open {
+        right: 0; /* fait apparaître le menu */
+    }
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.8em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px; /* pour laisser de la place à la croix */
+    gap: 15px;
+}
+
+    .menu-links a {
+        position: relative;
+        display: inline-block;
+        font-size: 1.8em;
+        color: black;
+        text-decoration: none;
+        padding: 0.5rem 0;
+        transition: color 0.3s ease;
+    }
+
+        .menu-links a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: black;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+/* Styles pour le mode sombre */
+body.dark-mode {
+    background-color: #1E1E1E; /* Fond sombre pour le body */
+    color: #E0E0E0; /* Texte clair pour contraster */
+}
+
+    /* Header */
+    body.dark-mode .header {
+        background-color: #333333; /* Fond foncé pour l'en-tête */
+        color: white; /* Texte en blanc pour le contraste */
+    }
+
+    /* Section bento */
+    body.dark-mode .bento {
+        background-color: #7A9D57; /* Vert clair plus doux */
+    }
+
+    /* Boxes */
+    body.dark-mode .box {
+        background-color: #C1A15C; /* Beige foncé pour les boîtes */
+        color: white; /* Texte clair dans les boîtes */
+    }
+
+    /* Boutons */
+    body.dark-mode .btn {
+        background-color: #8C4D2C; /* Marron foncé pour les boutons */
+        color: white; /* Texte clair sur les boutons */
+    }
+
+    /* Gallery */
+    body.dark-mode .gallery {
+        background-color: #7A9D57; /* Vert pâle/beige pour la galerie */
+    }
+
+    /* Images dans les boxes */
+    body.dark-mode .box1 img,
+    body.dark-mode .box2 img,
+    body.dark-mode .box3 img,
+    body.dark-mode .box4 img {
+        filter: brightness(0.8); /* Assombrir les images pour plus de contraste */
+    }
+
+    /* Effet hover sur les boutons */
+    body.dark-mode .btn:hover {
+        background-color: #A94700; /* Couleur de survol plus sombre */
+    }
+
+    body.dark-mode .buy-buttons-grid .btn-buy {
+        background-color: #8C4D2C;
+    }
+
+        body.dark-mode .buy-buttons-grid .btn-buy:hover {
+            background-color: #A94700;
+        }
+
+    /* Mode sombre pour les champs de formulaire */
+    body.dark-mode input,
+    body.dark-mode textarea {
+        background-color: #333; /* fond sombre */
+        color: #fff; /* texte blanc */
+        border: 1px solid #555; /* bordure discrète */
+    }
+
+        body.dark-mode input::placeholder,
+        body.dark-mode textarea::placeholder {
+            color: #ccc; /* placeholder en gris clair */
+        }

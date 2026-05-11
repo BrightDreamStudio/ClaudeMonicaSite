@@ -1,0 +1,141 @@
+﻿body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    background-color: #FAEDCD;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none; /* Enlève le soulignement */
+}
+
+    /* Optionnel : Ajouter un effet de survol (hover) pour les liens */
+    a:hover {
+        text-decoration: none; /* Enlève le soulignement au survol */
+    }
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex; /* Utilisation du flexbox pour un alignement horizontal */
+    justify-content: flex-start; /* Aligne tout à gauche */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    gap: 20px; /* Espacement entre la liste déroulante et le bouton Dark Mode */
+}
+
+.bg-gallery {
+    background-color: #CCD5AE;
+    width: 1300px;
+    min-height: 100vh;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.image-container {
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+        .image-container img:hover {
+            filter: grayscale(100%);
+            transform: scale(1.05);
+        }
+
+/* Lightbox style */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+#caption {
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1001;
+    user-select: none;
+}
+
+#prev {
+    left: 30px;
+}
+
+#next {
+    right: 30px;
+}
+
+    #prev:hover,
+    #next:hover,
+    #close:hover {
+        color: #ccc;
+    }

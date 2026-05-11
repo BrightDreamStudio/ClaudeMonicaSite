@@ -1,0 +1,13 @@
+CCD5AE : vert clair
+E9EDC9 : vert pale/beige
+FEFAE0 : beige clair
+FAEDCD : beige
+D4A373 : marron clair
+
+dark mode = couleurs suivantes
+
+99AB5D : vert clair
+D3DB93 : vert pale/beige
+FDF5C1 : beige clair
+F5DB9B : beige
+A94700 : marron clair

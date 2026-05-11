@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{460FB7FA-A527-4A30-905E-ABA585C6F7D6}"
+	ProjectSection(SolutionItems) = preProject
+		accueilfr.html = accueilfr.html
+		accueil_de.html = accueil_de.html
+		accueil_en.html = accueil_en.html
+		accueil_es.html = accueil_es.html
+		accueil_fr.html = accueil_fr.html
+		CircleInterview.js = CircleInterview.js
+		contact.php = contact.php
+		darkmode.js = darkmode.js
+		fetchGallery.php = fetchGallery.php
+		Gallery.css = Gallery.css
+		Gallery.js = Gallery.js
+		Gallery.php = Gallery.php
+		langues.js = langues.js
+		palette.txt = palette.txt
+		SideMenu.js = SideMenu.js
+		styles.css = styles.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {056441C0-8553-4AE3-8C83-6C7CDE4A0803}
+	EndGlobalSection
+EndGlobal
