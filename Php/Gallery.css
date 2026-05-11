@@ -1,141 +1,198 @@
-﻿body {
+/* ============================================================
+   MONICA HARDS — Gallery.css
+   Palette et fonts identiques à styles.css
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --green:    #CCD5AE;
+    --beige:    #FAEDCD;
+    --brown:    #D4A373;
+    --brown-dk: #bc8b5e;
+    --text:     #3a3028;
+    --header-h: 70px;
+}
+
+body {
     margin: 0;
     font-family: 'Lato', sans-serif;
-    background: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-    background-color: #FAEDCD;
+    background-color: var(--beige);
+    color: var(--text);
+    padding-top: var(--header-h);
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
+    margin: 0 0 0.75em;
 }
 
-a {
-    text-decoration: none; /* Enlève le soulignement */
-}
+a { text-decoration: none; color: inherit; }
 
-    /* Optionnel : Ajouter un effet de survol (hover) pour les liens */
-    a:hover {
-        text-decoration: none; /* Enlève le soulignement au survol */
-    }
-
+/* ── Header ── */
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
+    height: var(--header-h);
     background-color: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     z-index: 1000;
-    display: flex; /* Utilisation du flexbox pour un alignement horizontal */
-    justify-content: flex-start; /* Aligne tout à gauche */
-    align-items: center; /* Aligne les éléments verticalement au centre */
-    gap: 20px; /* Espacement entre la liste déroulante et le bouton Dark Mode */
+    display: flex;
+    align-items: center;
 }
 
+.header .Logo {
+    height: 44px;
+    width: auto;
+    padding: 0;
+}
+
+/* ── Side menu ── */
+.side-menu {
+    position: fixed;
+    top: 0; right: -360px;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.12);
+    transition: right 0.35s cubic-bezier(.4,0,.2,1);
+    z-index: 1050;
+    padding: 24px;
+}
+.side-menu.open { right: 0; }
+.close-menu {
+    position: absolute;
+    top: 18px; right: 18px;
+    font-size: 1.8em;
+    background: none; border: none;
+    cursor: pointer; color: var(--text);
+}
+.menu-links {
+    display: flex; flex-direction: column;
+    margin-top: 64px; gap: 12px;
+}
+.menu-links a {
+    position: relative;
+    font-size: 1.5em;
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    padding: 0.4rem 0;
+}
+.menu-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 2px; width: 100%;
+    background: var(--brown);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+.menu-links a:hover::after { transform: scaleX(1); }
+
+/* ── Titre ── */
+h1.page-title {
+    text-align: center;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    padding: 32px 0 8px;
+    margin: 0;
+}
+
+/* ── Wrapper fond ── */
 .bg-gallery {
-    background-color: #CCD5AE;
-    width: 1300px;
-    min-height: 100vh;
-    margin: 0 auto;
-    border-radius: 15px;
+    background-color: var(--green);
+    max-width: 1300px;
+    min-height: calc(100vh - var(--header-h) - 80px);
+    margin: 0 auto 32px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
+/* ── Grid galerie ── */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px;
+    gap: 14px;
+    padding: 32px;
 }
 
 .image-container {
     overflow: hidden;
-    aspect-ratio: 1/1;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.image-container img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    display: block;
+}
+.image-container:hover img {
+    filter: grayscale(80%);
+    transform: scale(1.07);
 }
 
-    .image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-        .image-container img:hover {
-            filter: grayscale(100%);
-            transform: scale(1.05);
-        }
-
-/* Lightbox style */
+/* ── Lightbox ── */
 #lightbox {
     display: none;
     position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
 #lightbox-img {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    max-width: 88vw;
+    max-height: 78vh;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(255,255,255,0.08);
 }
-
 #caption {
-    color: white;
-    margin-top: 15px;
-    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 16px;
+    font-size: 1em;
     font-style: italic;
+    font-family: 'Playfair Display', serif;
 }
-
 #close {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-    background: none;
-    border: none;
+    top: 20px; right: 28px;
+    color: white; font-size: 2.4em;
+    cursor: pointer; background: none; border: none;
+    transition: color 0.2s;
 }
-
-#prev,
-#next {
+#prev, #next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 50px;
-    color: white;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 10px;
-    z-index: 1001;
-    user-select: none;
+    font-size: 3em; color: white;
+    cursor: pointer; background: none; border: none;
+    padding: 12px; z-index: 2001; user-select: none;
+    transition: color 0.2s;
+}
+#prev { left: 20px; }
+#next { right: 20px; }
+#prev:hover, #next:hover, #close:hover { color: var(--brown); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .bg-gallery { border-radius: 14px; margin: 0 12px 24px; }
+    .gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); padding: 20px; }
 }
 
-#prev {
-    left: 30px;
+@media (max-width: 640px) {
+    :root { --header-h: 60px; }
+    .header .Logo { height: 36px; }
+    .gallery { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; padding: 14px; }
+    .bg-gallery { margin: 0 8px 16px; border-radius: 10px; }
+    #prev, #next { font-size: 2em; }
+    #close { font-size: 2em; top: 12px; right: 16px; }
 }
-
-#next {
-    right: 30px;
-}
-
-    #prev:hover,
-    #next:hover,
-    #close:hover {
-        color: #ccc;
-    }
